@@ -1,0 +1,294 @@
+.place-content{
+    padding: 80px;
+}
+.place-content h1{
+    font-weight: bold;
+}
+
+
+.teamy {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+   }
+   .teamy_layout {
+    position: relative;
+   }
+   .teamy_preview {
+    position: relative;
+    overflow: hidden;
+   }
+   .teamy_avatar {
+    display: block;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+   }
+   .teamy_preview:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+   }
+   .teamy_back {
+    width: 100%;
+    /* height: 100%;*/
+    box-sizing: border-box;
+    opacity: 0;
+    will-change: opacity;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+   }
+   .teamy:hover .teamy_back {
+    opacity: 1;
+    height: 100%;
+    transition: opacity .4s cubic-bezier(0.71, 0.05, 0.29, 0.9) .2s;
+   }
+   .teamy_name {
+    margin-top: 0;
+    margin-bottom: 0;
+   }
+   .teamy_post {
+    display: block;
+   }
+   /*
+    * 2. visual styles
+    */
+   
+   /* common styles for visual styles */
+   
+   .teamy_back {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+   }
+   .teamy_content {
+    padding: 20px;
+   }
+   .teamy_name {
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #282828;
+    font-family: 'montserratbold';
+   }
+   .teamy_post {
+    margin-top: .5em;
+    font-size: .8em;
+    text-transform: capitalize;
+    color: #6f6f6f;
+   }
+   /* style 1 */
+   
+   .teamy_style1 {
+    text-align: center;
+   }
+   .teamy_style3 .teamy_name {
+    font-size: 2em;
+   }
+   /*
+    * 3. masks
+    */
+   
+   /* mask circle */
+   
+   .teamy_mask-circle .teamy_preview:before {
+    width: 0;
+    height: 0;
+    padding: 25%;
+    border-radius: 50%;
+    transition: transform .3s ease, opacity .3s ease-out;
+    will-change: opacity, transform;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+   }
+   .teamy_mask-circle:hover .teamy_preview:before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(4);
+    transition-duration: .6s;
+   }
+   /* mask triangle */
+   
+   .teamy_mask-triangle .teamy_preview:before {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-clip-path: polygon(50% 10%, 15% 90%, 85% 90%);
+    clip-path: polygon(50% 10%, 15% 90%, 85% 90%);
+    transition-property: transform, opacity;
+    transition-duration: .2s, .4s;
+    transition-delay: .4s, 0s;
+    transition-timing-function: ease-out;
+    will-change: transform, opacity;
+    transform: translate(-50%, -50%) scale(1);
+   }
+   .teamy_mask-triangle:hover .teamy_preview:before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(5);
+    transition-delay: .1s, 0s;
+    transition-duration: .4s;
+   }
+   /*
+    * 4. animations for preview
+    */
+   
+   /* zoom */
+   
+   .teamy_zoom-photo .teamy_avatar {
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: transform;
+    transform: scale(1);
+   }
+   .teamy_zoom-photo:hover .teamy_avatar {
+    transform: scale(1.2);
+   }
+   /* zoom and rotate */
+   
+   .teamy_zoom-rotate-photo .teamy_avatar {
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: transform;
+    transform: scale(1) rotate(0);
+   }
+   .teamy_zoom-rotate-photo:hover .teamy_avatar {
+    transform: scale(1.2) rotate(5deg);
+   }
+   /* zoom and slide */
+   
+   .teamy_zoom-slide-photo .teamy_avatar {
+    transition: transform .4s cubic-bezier(0.71, 0.05, 0.29, 0.9);
+    will-change: transform;
+    transform: scale(1) translate(0, 0);
+   }
+   .teamy_zoom-slide-photo:hover .teamy_avatar {
+    transform: scale(1.2) translate(4%, 4%);
+   }
+   
+   /*
+    * 5. default skin
+    */
+   
+   @media screen and (max-width: 360px) {
+   .melnik909 {
+    display: none;
+   }
+   }
+   /* layout */
+   
+   .section:nth-of-type(even) {
+    background-color: var(--colorGray);
+   }
+   .section_header {
+    position: relative;
+    padding-bottom: 2rem;
+    text-align: center;
+    text-transform: capitalize;
+   }
+   .section_header:before {
+    content: "";
+    width: 5rem;
+    height: 3px;
+    background-color: var(--colorAlternative);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+   }
+   .section_title {
+    font-size: 2.4rem;
+    font-family: 'heebo';
+   }
+   .section_title span {
+    color: #007efa;
+   }
+   .section_hint {
+    font-size: 1.4rem;
+    display: block;
+    margin-top: 0rem;
+   }
+   .section_content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+   }
+   
+   @media screen and (min-width: 641px) {
+   .section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+   }
+   .section_header {
+    margin-bottom: 1rem;
+   }
+   .section_content {
+    justify-content: center;
+   }
+   }
+   
+   @media screen and (max-width: 640px) {
+   .section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+   }
+   .section_header {
+    margin-bottom: 3rem;
+   }
+   }
+   /* demo params */
+   
+   .teamy_preview:before {
+    background-color: var(--demoColorMask, rgba(1, 94, 186, .8));
+   }
+   .teamy_style2 .teamy_content {
+    background-color: var(--demoColorContent, rgba(72, 27, 174, .85));
+   }
+   /* social buttons */
+   
+   .social {
+    box-sizing: border-box;
+    width: 35px;
+    height: 35px;
+    padding: 6px;
+    /* background-color: #fff;*/
+    color: #fff;
+    border-radius: 100%;
+    margin: 0px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+   }
+   .social:hover {
+    box-sizing: border-box;
+    background-color: #fff;
+   }
+   .social_icon {
+    width: 100%;
+    height: 100%;
+    fill: rgba(72, 27, 174, 1);
+    fill: var(--demoColorIcon, rgba(72, 27, 174, 1));
+   }
+   .social_name {
+    position: absolute;
+    left: -9999px;
+   }
+   /* grid */
+   
+   .teamy-team {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   }
+   
+   @media screen and (max-width: 424px) {
+   .teamy {
+    width: 100%;
+   }
+   .teamy:not(:first-child) {
+    margin-top: 3rem;
+   }
+   }

@@ -1,0 +1,23 @@
+.list li{
+    list-style: none;
+    // padding-top: 35px;
+}
+.num{
+    margin-left: -18px;
+    font-size: 20px;
+    color: green;
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.login-form{
+    height: 100%;
+    width: auto;
+    background-color: lightgreen;
+    border-radius: 20px;
+}
+.login-heading{
+    color: white;
+    padding-top: 20px;
+}

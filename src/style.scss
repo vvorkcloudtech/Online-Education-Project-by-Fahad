@@ -1,0 +1,18 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+@import './css/components/Navbar';
+@import './css/components/Footer';
+@import './css/components/Hero';
+@import './css/components/Places';
+@import './css/components/Login';
+@import './css/components/Courses';
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
+  }
+body{
+    margin:0px;
+    padding: 0px;
+    font-family: myFirstFont;
+}
